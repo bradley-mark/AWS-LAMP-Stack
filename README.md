@@ -1,1 +1,1 @@
-# LAMP-Stack
+# AWS LAMP-Stack
