@@ -48,7 +48,7 @@ Create two new security groups in my default VPC
 
 Production Template which will allow Multi-AZ DB instance
 
-![image](https://user-images.githubusercontent.com/91480603/215812544-e5e31656-d2eb-4fba-8afb-ed021af2c43b.png)
+![image](https://user-images.githubusercontent.com/91480603/215847368-a6a28d53-084c-4427-b265-fb32f7baeea9.png)
 
 Enter a DB instance identifier name with Master name and password
 
