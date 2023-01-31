@@ -110,12 +110,17 @@ Select **WebDMZ** for Security Group (port 22, 80)
 ![image](https://user-images.githubusercontent.com/91480603/215814875-6024780c-5bc7-4b5c-9066-84f9c86b47a1.png)
 
 Elevate privileges to <root> sudo su
+  
 Check WordPress files present
+
 Check Apache service is started
 
 **WordPress Configuration**
+  
 **Database > RDS > Databases** - Select database and copy Endpoint info
+  
 Open browser and EC2 IP address for WordPress GUI
+
 Enter *endpoint* for Database Host and enter Database name, username, and password
 
 ![image](https://user-images.githubusercontent.com/91480603/215815676-f081d2e9-cfdb-4ed9-881a-5e5378067907.png)
