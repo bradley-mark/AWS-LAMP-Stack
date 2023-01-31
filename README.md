@@ -130,7 +130,9 @@ Enter *endpoint* for Database Host and enter Database name, username, and passwo
 ![image](https://user-images.githubusercontent.com/91480603/215815846-f2928cd6-b56a-4ecb-b0aa-b41f7e8af0ee.png)
 
 nano wp-config.php <edit> Copy/Paste - Ctrl-X - Y
+  
 Go back to GUI and click “Run the Installation”
+
 Complete the welcome screen to install WP
 
 ![image](https://user-images.githubusercontent.com/91480603/215816080-85eae22c-1fcf-4639-b219-a1eec3f0f98b.png)
