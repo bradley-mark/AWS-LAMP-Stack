@@ -94,11 +94,15 @@ T2 micro - all default except IAM role: **S3ForWP** - Advanced Details - User da
 **Bootstrap script**
 
 Update
+
 Install Apache, PHP, PHP-MySQL packages
+
 Copy a healthy.html file in the /var/www/html folder
+
 Download/install WordPress
 
 Add Tag: Name / **WPWriteNode**
+
 Select **WebDMZ** for Security Group (port 22, 80)
 
 **Login to EC2 using Public IPv4 address with Key pair**
