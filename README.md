@@ -317,7 +317,88 @@ Check s3://markbradley-wp-code has test.txt file
 
 **Create Launch Template** – LCforWP - My AMIs – WPReadNode – T2.Micro – IAM role: S3ForWP Security Group: WebDMZ
 
+![image](https://user-images.githubusercontent.com/91480603/215845389-81eef13d-7af9-48f4-afb1-4a4c407accad.png)
+
+**Compute > EC2 > Target Groups** – Create target group
+
+MyWPInstances – Target type: instance – HTTP – 80 – Default VPC – HTTP - /healthy.html
+
+Actions – Register and deregister instance / IP targets
+
+Check registered targets – healthy
+
+![image](https://user-images.githubusercontent.com/91480603/215845672-8838dcbb-61d9-4dde-a075-6ea9d5598f6b.png)
+
+**Create Auto Scaling Group** – ASGforWP – 3 instances – default VPC – all subnets
+
+Check - Receive traffic from one or more load balancers
+
+Target Group: MyWPInstances Health Check Type: ELB
+
+![image](https://user-images.githubusercontent.com/91480603/215845868-c9dea79e-db22-439f-8876-6effd7a15d5d.png)
+
+**Post implementation validation checks**
+
+**EC2 Dashboard**
+  
+Check instances running
+
+**Target Groups**
+
+Check *all* registered targets - WPReadNode – healthy
+
+**WP website**
+  
+Validate and open HTTP page with domain to view WordPress site hosted via Load Balancer
+
+Open image file to see page and validate CloudFront address.
+  
+Edit Write Node EC2 and content is auto copied to S3 and S3 downloaded to Read Nodes EC2
+
+Website is updated with new content
+
+Check autoscaling by terminating running RN instances and verify new replacement instances
+
+Auto Scaling Group – Activity History will confirm terminated instances and new EC2 instances
+
+Check RDS by rebooting instance - primary will failover to secondary
+
+  
+**Optional Route 53 > Hosted zones > Create hosted zone**
+  
+Create a hosted zone for your domain name
+
+**Add Domain Name to WP site**
+
+After creating Load balancer – Route 53 Alias
+
+**Networking & Content Delivery > Route 53**
+
+Hosted zones – Domain name
+
+Create Record Set
+
+A
+
+Alias - Y
+
+Alias Target: <name of load balancer>
+
+Routing Policy: Simple
+
+Evaluate Target Health - No
+
+![image](https://user-images.githubusercontent.com/91480603/215846557-36a12414-0cec-4a13-b665-b2becf973d80.png)
 
 
+**Troubleshooting**
+  
+WordPress versions
+
+**https://codex.wordpress.org/WordPress_Versions**
+
+WordPress and PHP Version Compatibility
+
+**https://make.wordpress.org/core/handbook/references/php-compatibility-and-wordpress-versions/**
 
 
