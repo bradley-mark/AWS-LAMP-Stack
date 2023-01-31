@@ -8,7 +8,9 @@ This is a typical small **proof of concept** example for a customer.
 
 **Set up** shows work notes and will NOT document every small AWS configuration detail. 
 
-Please note this is a temporary environment and security considerations are open. Production would use HTTPS 443 instead of HTTP port 80 and other restrictions.
+Please note this is a temporary environment and security considerations are open. 
+
+Production would use HTTPS 443 instead of HTTP port 80 and other restrictions.
 
 **High Level Design**
 
