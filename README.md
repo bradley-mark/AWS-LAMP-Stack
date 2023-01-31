@@ -107,3 +107,46 @@ Check Apache service is started
 Open browser and EC2 IP address for WordPress GUI
 Enter *endpoint* for Database Host and enter Database name, username, and password
 
+![image](https://user-images.githubusercontent.com/91480603/215815676-f081d2e9-cfdb-4ed9-881a-5e5378067907.png)
+
+Sorry, but I can’t write the wp-config.php file <error screen > Copy/paste text
+  
+![image](https://user-images.githubusercontent.com/91480603/215815846-f2928cd6-b56a-4ecb-b0aa-b41f7e8af0ee.png)
+
+nano wp-config.php <edit> Copy/Paste - Ctrl-X - Y
+Go back to GUI and click “Run the Installation”
+Complete the welcome screen to install WP
+
+![image](https://user-images.githubusercontent.com/91480603/215816080-85eae22c-1fcf-4639-b219-a1eec3f0f98b.png)
+
+Login to WP
+  
+![image](https://user-images.githubusercontent.com/91480603/215816292-b0e382f3-6d0c-4df1-b363-7bd495c0bd1c.png)
+
+See the WP Dashboard
+  
+![image](https://user-images.githubusercontent.com/91480603/215816479-89527d93-aa79-4dee-b223-199483bb4423.png)
+
+Add post
+Add photos to Media
+Check website post
+Right click copy image address
+Paste in browser and confirm EC2 Public IP address
+
+![image](https://user-images.githubusercontent.com/91480603/215816883-269236e8-7db7-498e-9ea3-984ffbe11abc.png)
+
+Media files should be located on EC2 in wp-content folder
+  
+![image](https://user-images.githubusercontent.com/91480603/215817075-60f89b1f-3922-4a46-9223-1fedfd637ecc.png)
+
+**CMD line copy files to S3**
+
+aws s3 cp /var/www/html/wp-content/uploads/2022/02 s3://markbradley-wp-media –recursive
+aws s3 cp /var/www/html s3://markbradley-wp-code –recursive
+
+After copy
+Check copy
+
+aws s3 ls s3://markbradley-wp-code
+
+  
