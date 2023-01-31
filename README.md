@@ -76,4 +76,32 @@ Role name: **S3forWP**
 **EC2**
 **Launch instance > Amazon Linux 2 AMI**
 
+![image](https://user-images.githubusercontent.com/91480603/215813900-8575cb40-8a88-4745-8ac2-5c5408d21b04.png)
+
+T2 micro - all default except IAM role: **S3ForWP** - Advanced Details - User data - **bootstrap script**
+
+![image](https://user-images.githubusercontent.com/91480603/215814195-c3fa4397-2095-43fe-bf22-03ed1551596f.png)
+
+**Bootstrap script**
+
+Update
+Install Apache, PHP, PHP-MySQL packages
+Copy a healthy.html file in the /var/www/html folder
+Download/install WordPress
+
+Add Tag: Name / **WPWriteNode**
+Select **WebDMZ** for Security Group (port 22, 80)
+
+**Login to EC2 using Public IPv4 address with Key pair**
+
+![image](https://user-images.githubusercontent.com/91480603/215814875-6024780c-5bc7-4b5c-9066-84f9c86b47a1.png)
+
+Elevate privileges to <root> sudo su
+Check WordPress files present
+Check Apache service is started
+
+**WordPress Configuration**
+**Database > RDS > Databases** - Select database and copy Endpoint info
+Open browser and EC2 IP address for WordPress GUI
+Enter *endpoint* for Database Host and enter Database name, username, and password
 
