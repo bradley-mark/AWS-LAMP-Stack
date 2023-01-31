@@ -58,7 +58,9 @@ Create DB instance that is not publicly accessible and in Default VPC choosing e
 
 **S3 > Create bucket**
 Create two S3 buckets
+
 **markbradley-wp-code** / Bucket and objects not public
+
 **markbradley-wp-media** / Public Access
 
 **CloudFront > Distribution > Create distribution**
