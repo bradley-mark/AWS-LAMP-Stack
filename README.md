@@ -125,7 +125,7 @@ Enter *endpoint* for Database Host and enter Database name, username, and passwo
 
 ![image](https://user-images.githubusercontent.com/91480603/215815676-f081d2e9-cfdb-4ed9-881a-5e5378067907.png)
 
-Sorry, but I can’t write the wp-config.php file <error screen > Copy/paste text
+**Sorry, but I can’t write the wp-config.php file** error screen  - Copy/paste text
   
 ![image](https://user-images.githubusercontent.com/91480603/215815846-f2928cd6-b56a-4ecb-b0aa-b41f7e8af0ee.png)
 
