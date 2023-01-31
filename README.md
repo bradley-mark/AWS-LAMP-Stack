@@ -1,10 +1,14 @@
 # AWS LAMP-Stack
 
-**What is does**
+**Goal**
 
-We will create a fault tolerant WordPress site with high availability. A WP Admin will manage the site and content directly accessing on an EC2 instance that will upload both code and media to S3. Users will access the website through a load balancer to a group of EC2 instances that will download the code and media from S3. CloudFront will host and cache media files for performance.
+Create a fault tolerant WordPress site with high availability. A WP Admin will manage the site and content directly accessing an EC2 instance that will upload both code and media to S3. Users will access the website through a load balancer to a group of EC2 instances that will download the code and media from S3. CloudFront will host and cache media files for performance.
 
-This could be a typical small **proof of concept** example for a customer. We can use this as a real-life case study to create a fault tolerant WordPress site. We'll skip through the steps in AWS and will not document every small configuration detail. Please note this is a temporary environment and security considerations may be open. Production would use HTTPS 443 instead of HTTP port 80 and other restrictions.
+This is a typical small **proof of concept** example for a customer. 
+
+**Set up shows** work notes and will not document every small AWS configuration detail. 
+
+Please note this is a temporary environment and security considerations are open. Production would use HTTPS 443 instead of HTTP port 80 and other restrictions.
 
 **High Level Design**
 
