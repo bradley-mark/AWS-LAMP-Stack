@@ -41,3 +41,39 @@ Create two new security groups in my default VPC
 - RDS-MYSQL/Aurora - port 3306 - source: Security group name for WebDMZ
 
 **Database > RDS > Create database**
+
+![image](https://user-images.githubusercontent.com/91480603/215812295-88421dd4-e644-4603-8180-d314b9224fac.png)
+
+**MySQL – version 5.7.22**
+
+Production Template which will allow Multi-AZ DB instance
+
+![image](https://user-images.githubusercontent.com/91480603/215812544-e5e31656-d2eb-4fba-8afb-ed021af2c43b.png)
+
+Enter a DB instance identifier name with Master name and password
+
+For test and billing purposes we will use a T2 Micro with 20GB General Purpose SSD
+
+Create DB instance that is not publicly accessible and in Default VPC choosing existing VPC security groups - **RDS-MYSQL/Aurora**
+
+**S3 > Create bucket**
+Create two S3 buckets
+**markbradley-wp-code** / Bucket and objects not public
+**markbradley-wp-media** / Public Access
+
+**CloudFront > Distribution > Create distribution**
+
+Create a distribution and use the S3 media bucket for the Origin Name and S3 FQDN for Origin Domain
+
+![image](https://user-images.githubusercontent.com/91480603/215813193-6660ed0f-1ddd-4bc2-b4a7-57ce80c655b9.png)
+
+**Security, Identity, & Compliance > IAM > Roles > Create role**
+
+AWS service - **EC2**
+Permissions policies > **AmazonS3FullAccess**
+Role name: **S3forWP**
+
+**EC2**
+**Launch instance > Amazon Linux 2 AMI**
+
+
