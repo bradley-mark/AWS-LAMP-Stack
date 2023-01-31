@@ -57,12 +57,14 @@ For test and billing purposes we will use a T2 Micro with 20GB General Purpose S
 Create DB instance that is not publicly accessible and in Default VPC choosing existing VPC security groups - **RDS-MYSQL/Aurora**
 
 
+
 **S3 > Create bucket**
 Create two S3 buckets
 
 **markbradley-wp-code** / Bucket and objects not public
 
 **markbradley-wp-media** / Public Access
+
 
 
 **CloudFront > Distribution > Create distribution**
