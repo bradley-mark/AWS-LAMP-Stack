@@ -76,10 +76,13 @@ Create a distribution and use the S3 media bucket for the Origin Name and S3 FQD
 **Security, Identity, & Compliance > IAM > Roles > Create role**
 
 AWS service - **EC2**
+
 Permissions policies > **AmazonS3FullAccess**
+
 Role name: **S3forWP**
 
 **EC2**
+
 **Launch instance > Amazon Linux 2 AMI**
 
 ![image](https://user-images.githubusercontent.com/91480603/215813900-8575cb40-8a88-4745-8ac2-5c5408d21b04.png)
