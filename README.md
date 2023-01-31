@@ -211,3 +211,73 @@ Paste in browser and confirm CloudFront address and not EC2 instance
 
 ![image](https://user-images.githubusercontent.com/91480603/215842509-0997af6f-0782-4084-9ddc-e6a40b807355.png)
 
+**Create Application Load balancer**
+  
+**Compute > EC2 > Load balancers** – Create load balancer
+ 
+![image](https://user-images.githubusercontent.com/91480603/215842978-3a634865-e6d5-40da-b052-66b50f2249eb.png)
+
+Application Load Balancer – **HTTP HTTPS**
+  
+Internet Facing - **IPv4 – HTTP - All Availability Zones**
+
+Select Existing Security Group - **WebDMZ**
+
+New Target Group - **MyWPInstances**
+
+Target Type: Instance - Protocol: **HTTP - Port: 80**
+
+Health Check - Protocol: **HTTP** - Path: **/healthy.html**
+  
+![image](https://user-images.githubusercontent.com/91480603/215843619-9a126d91-963b-4551-bfad-e60fadcce224.png)
+
+**Configure ReadNode EC2 for AMI to download S3 content and use for Auto Scale Group**
+
+**Configure WriteNode EC2 to upload S3 content**
+  
+**Setup a cron job**
+  
+The cron command-line utility is a job scheduler that can run tasks at fixed times, dates, or intervals
+
+**Login EC2**
+  
+cd /etc
+
+nano crontab
+  
+![image](https://user-images.githubusercontent.com/91480603/215844027-05c9f25a-e0d4-43f3-8981-4c01b1aa82a5.png)
+
+*/1 * * * * root aws s3 sync --delete s3://markbradley-wp-code /var/www/html
+
+Ctrl+X > Y  > service crond restart
+  
+![image](https://user-images.githubusercontent.com/91480603/215844236-615e9ec3-adbb-4b93-a4d3-4d1ca40e0519.png)
+
+This task will download the S3 folder contents for the read node instance – Copy from S3 to local folder
+
+**Test update to S3**
+  
+Add file hello.txt to s3://markbradley-wp-code
+
+  Check EC2
+
+  cd /var/www/html
+ 
+  hello.txt
+
+  cat hello.txt > displays text content
+
+**Create Template for WPReadNode EC2**
+  
+**Compute > EC2** - Select instance > Action > Image > Create Image
+
+  Image Name: WPReadNode
+
+  Image Description: This is the default read node for WP
+
+  **Images > AMIs** - check image is available
+
+
+
+
+
