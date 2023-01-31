@@ -10,7 +10,7 @@ This is a typical small **proof of concept** example for a customer.
 
 Please note this is a temporary environment and security considerations are open. 
 
-Production would use HTTPS 443 instead of HTTP port 80 and other restrictions.
+Production would use HTTPS port 443 instead of HTTP port 80 and other restrictions.
 
 **High Level Design**
 
