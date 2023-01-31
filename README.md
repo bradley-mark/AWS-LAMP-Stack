@@ -259,23 +259,63 @@ This task will download the S3 folder contents for the read node instance – Co
   
 Add file hello.txt to s3://markbradley-wp-code
 
-  Check EC2
+Check EC2
 
-  cd /var/www/html
+cd /var/www/html
  
-  hello.txt
+hello.txt
 
-  cat hello.txt > displays text content
+cat hello.txt > displays text content
 
 **Create Template for WPReadNode EC2**
   
 **Compute > EC2** - Select instance > Action > Image > Create Image
 
-  Image Name: WPReadNode
+Image Name: WPReadNode
 
-  Image Description: This is the default read node for WP
+Image Description: This is the default read node for WP
 
-  **Images > AMIs** - check image is available
+**Images > AMIs** - check image is available
+
+![image](https://user-images.githubusercontent.com/91480603/215844728-e6aaaaf0-6cae-46b0-9cd7-ca613ae210d5.png)
+
+**Login to WP WriteNode EC2**
+  
+sudo su
+
+cd /var/www/html/etc
+
+clear
+
+nano crontab
+
+*/1 * * * * root aws s3 sync --delete /var/www/html s3://markbradley-wp-code
+
+*/1 * * * * root aws s3 sync --delete /var/www/html/wp-content/uploads s3://markbradley-wp-media
+
+Ctrl+X – Y
+
+This task will upload the local folder contents to S3 for the write node instance.
+
+**Test update to S3**
+  
+cd /var/www/html
+
+echo "This is a TEST" > test.txt
+
+service crond restart
+
+service httpd status
+  
+**Check S3**
+  
+Check s3://markbradley-wp-code has test.txt file
+
+**Setup Auto Scaling Groups using new AMI (read nodes)**
+
+**Compute > EC2 > Auto Scaling Groups**
+
+**Create Launch Template** – LCforWP - My AMIs – WPReadNode – T2.Micro – IAM role: S3ForWP Security Group: WebDMZ
 
 
 
