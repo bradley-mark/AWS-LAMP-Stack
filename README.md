@@ -142,9 +142,11 @@ Media files should be located on EC2 in wp-content folder
 **CMD line copy files to S3**
 
 aws s3 cp /var/www/html/wp-content/uploads/2022/02 s3://markbradley-wp-media –recursive
+  
 aws s3 cp /var/www/html s3://markbradley-wp-code –recursive
 
 After copy
+
 Check copy
 
 aws s3 ls s3://markbradley-wp-code
