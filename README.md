@@ -97,7 +97,7 @@ Update
 
 Install Apache, PHP, PHP-MySQL packages
 
-Copy a healthy.html file in the /var/www/html folder
+Copy a **healthy.html** file in the **/var/www/html** folder
 
 Download/install WordPress
 
