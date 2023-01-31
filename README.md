@@ -8,7 +8,7 @@ This could be a typical small **proof of concept** example for a customer. We ca
 
 **High Level Design**
 
-
+![image](https://user-images.githubusercontent.com/91480603/215809343-22e29ffb-bcd4-4a9a-bcf0-3e7906bfddeb.png)
 
 **Compnents Used**
 
