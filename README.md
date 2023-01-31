@@ -137,18 +137,22 @@ Complete the welcome screen to install WP
 
 ![image](https://user-images.githubusercontent.com/91480603/215816080-85eae22c-1fcf-4639-b219-a1eec3f0f98b.png)
 
-Login to WP
+**Login to WP**
   
 ![image](https://user-images.githubusercontent.com/91480603/215816292-b0e382f3-6d0c-4df1-b363-7bd495c0bd1c.png)
 
-See the WP Dashboard
+**See the WP Dashboard**
   
 ![image](https://user-images.githubusercontent.com/91480603/215816479-89527d93-aa79-4dee-b223-199483bb4423.png)
 
 Add post
+
 Add photos to Media
+
 Check website post
+
 Right click copy image address
+
 Paste in browser and confirm EC2 Public IP address
 
 ![image](https://user-images.githubusercontent.com/91480603/215816883-269236e8-7db7-498e-9ea3-984ffbe11abc.png)
