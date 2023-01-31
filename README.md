@@ -30,3 +30,14 @@ This could be a typical small **proof of concept** example for a customer. We ca
 
 **Set up**
 
+**Login to AWS Console**
+
+![image](https://user-images.githubusercontent.com/91480603/215811431-b53970e6-28ce-4e11-8f16-86785840973a.png)
+
+**Networking & Content Delivery > VPC > Security Groups**
+
+Create two new security groups in my default VPC
+- WebDMZ - port 22, 80 - source: 0.0.0.0/0
+- RDS-MYSQL/Aurora - port 3306 - source: Security group name for WebDMZ
+
+**Database > RDS > Create database**
