@@ -151,4 +151,63 @@ Check copy
 
 aws s3 ls s3://markbradley-wp-code
 
+**URL rewrite rule for CloudFront**
   
+**Networking & Content Delivery > CloudFront** -  Distributed domain name – Copy/Paste
+  
+![image](https://user-images.githubusercontent.com/91480603/215841340-4cbe2dac-9f3a-4c93-9603-17deb2021281.png)
+
+cd /var/www/html
+
+nano .htaccess
+
+![image](https://user-images.githubusercontent.com/91480603/215841533-65ca0966-df39-42c0-a898-4d1e150a74ef.png)
+
+Edit current CloudFront URL to include CloudFront Distributed domain name > Copy/Paste
+
+Ctrl+X – Y
+
+aws s3 sync /var/www/html s3://markbradley-wp-code
+
+This will upload and change the edited .htaccess file in S3
+
+This file will now point to CloudFront
+
+**Configure Apache for URL rewrites**
+
+cd /etc/httpd
+
+ls
+  
+cd conf
+
+ls
+
+![image](https://user-images.githubusercontent.com/91480603/215841906-90a2aaab-5f38-4360-bbf5-bc6f373d1ac2.png)
+
+nano httpd.conf
+  
+![image](https://user-images.githubusercontent.com/91480603/215842024-9ed6322b-2c33-44af-9550-fca22a0544db.png)
+
+Find
+  
+![image](https://user-images.githubusercontent.com/91480603/215842200-d8fca013-5c4a-417f-859b-7ca0e1d2e187.png)
+
+Edit AllowOverride ALL
+  
+![image](https://user-images.githubusercontent.com/91480603/215842320-562253b0-d7ed-4d0c-a4a3-8523cdf1b3d3.png)
+
+Ctrl+X - Y
+
+service httpd restart
+
+**Validate CloudFront is now hosting media files**
+  
+Open WP in browser and check post and images 
+
+Right click copy image address
+
+Paste in browser and confirm CloudFront address and not EC2 instance
+
+![image](https://user-images.githubusercontent.com/91480603/215842509-0997af6f-0782-4084-9ddc-e6a40b807355.png)
+
